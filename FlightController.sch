@@ -31,7 +31,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:power_supply-cache
+LIBS:FlightController-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -158,39 +158,6 @@ F 3 "" H 1900 1450 50  0001 C CNN
 	1    1900 1450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7100 1000 7000 1000
-Wire Wire Line
-	7000 1000 7000 1100
-Wire Wire Line
-	7100 900  7000 900 
-Wire Wire Line
-	7000 900  7000 800 
-Wire Wire Line
-	2000 850  2000 750 
-Wire Wire Line
-	2000 800  2550 800 
-Wire Wire Line
-	2550 800  2550 1000
-Connection ~ 2000 800 
-Wire Wire Line
-	2250 1200 2000 1200
-Wire Wire Line
-	2000 1150 2000 1250
-Connection ~ 2000 1200
-Wire Wire Line
-	2550 1400 2550 1500
-Wire Wire Line
-	2550 1750 2550 1600
-Wire Wire Line
-	2000 1750 2550 1750
-Wire Wire Line
-	2000 1750 2000 1650
-Connection ~ 2300 1750
-Wire Wire Line
-	1700 1450 1600 1450
-Wire Wire Line
-	1100 1450 1300 1450
 $Comp
 L +BATT #PWR05
 U 1 1 59DBBCE2
@@ -268,31 +235,6 @@ F 3 "" H 1900 2650 50  0001 C CNN
 	1    1900 2650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2000 2050 2000 1950
-Wire Wire Line
-	2000 2000 2550 2000
-Wire Wire Line
-	2550 2000 2550 2200
-Connection ~ 2000 2000
-Wire Wire Line
-	2250 2400 2000 2400
-Wire Wire Line
-	2000 2350 2000 2450
-Connection ~ 2000 2400
-Wire Wire Line
-	2550 2600 2550 2700
-Wire Wire Line
-	2550 2950 2550 2800
-Wire Wire Line
-	2000 2950 2550 2950
-Wire Wire Line
-	2000 2950 2000 2850
-Connection ~ 2300 2950
-Wire Wire Line
-	1700 2650 1600 2650
-Wire Wire Line
-	1300 2650 1200 2650
 $Comp
 L +BATT #PWR07
 U 1 1 59DBC048
@@ -370,31 +312,6 @@ F 3 "" H 1950 3850 50  0001 C CNN
 	1    1950 3850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2050 3250 2050 3150
-Wire Wire Line
-	2050 3200 2600 3200
-Wire Wire Line
-	2600 3200 2600 3400
-Connection ~ 2050 3200
-Wire Wire Line
-	2300 3600 2050 3600
-Wire Wire Line
-	2050 3550 2050 3650
-Connection ~ 2050 3600
-Wire Wire Line
-	2600 3800 2600 3900
-Wire Wire Line
-	2600 4150 2600 4000
-Wire Wire Line
-	2050 4150 2600 4150
-Wire Wire Line
-	2050 4150 2050 4050
-Connection ~ 2350 4150
-Wire Wire Line
-	1750 3850 1650 3850
-Wire Wire Line
-	1200 3850 1350 3850
 $Comp
 L +BATT #PWR09
 U 1 1 59DBC081
@@ -472,36 +389,6 @@ F 3 "" H 1950 5050 50  0001 C CNN
 	1    1950 5050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2050 4450 2050 4350
-Wire Wire Line
-	2050 4400 2600 4400
-Wire Wire Line
-	2600 4400 2600 4600
-Connection ~ 2050 4400
-Wire Wire Line
-	2300 4800 2050 4800
-Wire Wire Line
-	2050 4750 2050 4850
-Connection ~ 2050 4800
-Wire Wire Line
-	2600 5000 2600 5100
-Wire Wire Line
-	2600 5350 2600 5200
-Wire Wire Line
-	2050 5350 2600 5350
-Wire Wire Line
-	2050 5350 2050 5250
-Connection ~ 2350 5350
-Wire Wire Line
-	1750 5050 1650 5050
-Wire Wire Line
-	1200 5050 1350 5050
-Wire Wire Line
-	1200 1450 1200 5050
-Connection ~ 1200 2650
-Connection ~ 1200 3850
-Connection ~ 1200 1450
 $Comp
 L Conn_01x03 5VLLR
 U 1 1 59DEBC2D
@@ -535,14 +422,6 @@ F 3 "" H 8550 1100 50  0001 C CNN
 	1    8550 1100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8550 1100 8550 1000
-Wire Wire Line
-	8550 1000 8650 1000
-Wire Wire Line
-	8650 800  8550 800 
-Wire Wire Line
-	8550 800  8550 750 
 $Comp
 L +5V #PWR?
 U 1 1 59DECF7D
@@ -554,10 +433,6 @@ F 3 "" H 8400 850 50  0001 C CNN
 	1    8400 850 
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8650 900  8400 900 
-Wire Wire Line
-	8400 900  8400 850 
 $Comp
 L Conn_01x03 3.3VLLR
 U 1 1 59DED0C8
@@ -591,6 +466,201 @@ F 3 "" H 7750 1100 50  0001 C CNN
 	1    7750 1100
 	1    0    0    -1  
 $EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59DED145
+P 7600 850
+F 0 "#PWR?" H 7600 700 50  0001 C CNN
+F 1 "+3.3V" H 7600 990 50  0000 C CNN
+F 2 "" H 7600 850 50  0001 C CNN
+F 3 "" H 7600 850 50  0001 C CNN
+	1    7600 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Teensy3.6 Teensy3.6
+U 1 1 59F11AA9
+P 5500 2200
+F 0 "Teensy3.6" H 5450 2700 60  0000 C CNN
+F 1 "Teensy3.6" H 5450 2700 60  0001 C CNN
+F 2 "" H 5450 2700 60  0001 C CNN
+F 3 "" H 5450 2700 60  0001 C CNN
+	1    5500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59F11F42
+P 4850 1800
+F 0 "#PWR?" H 4850 1550 50  0001 C CNN
+F 1 "GND" H 4850 1650 50  0000 C CNN
+F 2 "" H 4850 1800 50  0001 C CNN
+F 3 "" H 4850 1800 50  0001 C CNN
+	1    4850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59F12043
+P 6150 3200
+F 0 "#PWR?" H 6150 2950 50  0001 C CNN
+F 1 "GND" H 6150 3050 50  0000 C CNN
+F 2 "" H 6150 3200 50  0001 C CNN
+F 3 "" H 6150 3200 50  0001 C CNN
+	1    6150 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59F12845
+P 6050 1800
+F 0 "#PWR?" H 6050 1650 50  0001 C CNN
+F 1 "+3.3V" H 6050 1940 50  0000 C CNN
+F 2 "" H 6050 1800 50  0001 C CNN
+F 3 "" H 6050 1800 50  0001 C CNN
+	1    6050 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L BNO055 9-DOF_IMU?
+U 1 1 59F129D3
+P 7400 2200
+F 0 "9-DOF_IMU?" H 7350 2600 60  0001 C CNN
+F 1 "BNO055" H 7350 2600 60  0000 C CNN
+F 2 "" H 7350 2600 60  0001 C CNN
+F 3 "" H 7350 2600 60  0001 C CNN
+	1    7400 2200
+	1    0    0    -1  
+$EndComp
+Text Label 4650 2600 0    60   ~ 0
+SCL0
+Text Label 4650 2700 0    60   ~ 0
+SDA0
+Wire Wire Line
+	7100 1000 7000 1000
+Wire Wire Line
+	7000 1000 7000 1100
+Wire Wire Line
+	7100 900  7000 900 
+Wire Wire Line
+	7000 900  7000 800 
+Wire Wire Line
+	2000 750  2000 850 
+Wire Wire Line
+	2000 800  2550 800 
+Wire Wire Line
+	2550 800  2550 1000
+Connection ~ 2000 800 
+Wire Wire Line
+	2250 1200 2000 1200
+Wire Wire Line
+	2000 1150 2000 1250
+Connection ~ 2000 1200
+Wire Wire Line
+	2550 1400 2550 1500
+Wire Wire Line
+	2550 1750 2550 1600
+Wire Wire Line
+	2000 1750 2550 1750
+Wire Wire Line
+	2000 1750 2000 1650
+Connection ~ 2300 1750
+Wire Wire Line
+	1700 1450 1600 1450
+Wire Wire Line
+	1100 1450 1300 1450
+Wire Wire Line
+	2000 1950 2000 2050
+Wire Wire Line
+	2000 2000 2550 2000
+Wire Wire Line
+	2550 2000 2550 2200
+Connection ~ 2000 2000
+Wire Wire Line
+	2250 2400 2000 2400
+Wire Wire Line
+	2000 2350 2000 2450
+Connection ~ 2000 2400
+Wire Wire Line
+	2550 2600 2550 2700
+Wire Wire Line
+	2550 2950 2550 2800
+Wire Wire Line
+	2000 2950 2550 2950
+Wire Wire Line
+	2000 2950 2000 2850
+Connection ~ 2300 2950
+Wire Wire Line
+	1700 2650 1600 2650
+Wire Wire Line
+	1300 2650 1200 2650
+Wire Wire Line
+	2050 3150 2050 3250
+Wire Wire Line
+	2050 3200 2600 3200
+Wire Wire Line
+	2600 3200 2600 3400
+Connection ~ 2050 3200
+Wire Wire Line
+	2300 3600 2050 3600
+Wire Wire Line
+	2050 3550 2050 3650
+Connection ~ 2050 3600
+Wire Wire Line
+	2600 3800 2600 3900
+Wire Wire Line
+	2600 4150 2600 4000
+Wire Wire Line
+	2050 4150 2600 4150
+Wire Wire Line
+	2050 4150 2050 4050
+Connection ~ 2350 4150
+Wire Wire Line
+	1750 3850 1650 3850
+Wire Wire Line
+	1200 3850 1350 3850
+Wire Wire Line
+	2050 4350 2050 4450
+Wire Wire Line
+	2050 4400 2600 4400
+Wire Wire Line
+	2600 4400 2600 4600
+Connection ~ 2050 4400
+Wire Wire Line
+	2300 4800 2050 4800
+Wire Wire Line
+	2050 4750 2050 4850
+Connection ~ 2050 4800
+Wire Wire Line
+	2600 5000 2600 5100
+Wire Wire Line
+	2600 5350 2600 5200
+Wire Wire Line
+	2050 5350 2600 5350
+Wire Wire Line
+	2050 5350 2050 5250
+Connection ~ 2350 5350
+Wire Wire Line
+	1750 5050 1650 5050
+Wire Wire Line
+	1200 5050 1350 5050
+Wire Wire Line
+	1200 1450 1200 5050
+Connection ~ 1200 2650
+Connection ~ 1200 3850
+Connection ~ 1200 1450
+Wire Wire Line
+	8550 1100 8550 1000
+Wire Wire Line
+	8550 1000 8650 1000
+Wire Wire Line
+	8650 800  8550 800 
+Wire Wire Line
+	8550 800  8550 750 
+Wire Wire Line
+	8650 900  8400 900 
+Wire Wire Line
+	8400 900  8400 850 
 Wire Wire Line
 	7750 1100 7750 1000
 Wire Wire Line
@@ -603,15 +673,48 @@ Wire Wire Line
 	7850 900  7600 900 
 Wire Wire Line
 	7600 900  7600 850 
+Wire Wire Line
+	4850 1800 5000 1800
+Wire Wire Line
+	5950 3200 6150 3200
+Wire Wire Line
+	6050 1800 5950 1800
+Wire Wire Line
+	5000 2600 4650 2600
+Wire Wire Line
+	5000 2700 4650 2700
+Wire Wire Line
+	6900 2200 6750 2200
+Text Label 6750 2200 0    60   ~ 0
+SDA0
+Wire Wire Line
+	7750 2200 7950 2200
+Text Label 7950 2200 2    60   ~ 0
+SCL0
 $Comp
 L +3.3V #PWR?
-U 1 1 59DED145
-P 7600 850
-F 0 "#PWR?" H 7600 700 50  0001 C CNN
-F 1 "+3.3V" H 7600 990 50  0000 C CNN
-F 2 "" H 7600 850 50  0001 C CNN
-F 3 "" H 7600 850 50  0001 C CNN
-	1    7600 850 
+U 1 1 59F1414E
+P 6800 1900
+F 0 "#PWR?" H 6800 1750 50  0001 C CNN
+F 1 "+3.3V" H 6800 2040 50  0000 C CNN
+F 2 "" H 6800 1900 50  0001 C CNN
+F 3 "" H 6800 1900 50  0001 C CNN
+	1    6800 1900
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6900 1900 6800 1900
+$Comp
+L GND #PWR?
+U 1 1 59F14217
+P 6500 2100
+F 0 "#PWR?" H 6500 1850 50  0001 C CNN
+F 1 "GND" H 6500 1950 50  0000 C CNN
+F 2 "" H 6500 2100 50  0001 C CNN
+F 3 "" H 6500 2100 50  0001 C CNN
+	1    6500 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 2100 6500 2100
 $EndSCHEMATC
